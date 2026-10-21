@@ -56,7 +56,7 @@ abstract class AbstractProducer implements Producer
         $this->exchange->getChannel()->confirmSelect();
     }
 
-    public function setConfirmCallback(callable $ackCallback = null, callable $nackCallback = null): void
+    public function setConfirmCallback(?callable $ackCallback = null, ?callable $nackCallback = null): void
     {
         $this->exchange->getChannel()->setConfirmCallback($ackCallback, $nackCallback);
     }
@@ -66,7 +66,7 @@ abstract class AbstractProducer implements Producer
         $this->exchange->getChannel()->waitForConfirm($timeout);
     }
 
-    public function setReturnCallback(callable $returnCallback = null): void
+    public function setReturnCallback(?callable $returnCallback = null): void
     {
         $this->exchange->getChannel()->setReturnCallback($returnCallback);
     }

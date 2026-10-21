@@ -114,7 +114,7 @@ final class Queue implements QueueInterface
         return $result[1];
     }
 
-    public function bind(string $exchangeName, string $routingKey = null, array $arguments = []): void
+    public function bind(string $exchangeName, ?string $routingKey = null, array $arguments = []): void
     {
         if (null === $routingKey) {
             $routingKey = '';
@@ -150,7 +150,7 @@ final class Queue implements QueueInterface
     public function consume(
         ?callable $callback = null,
         int $flags = Constants::AMQP_NOPARAM,
-        string $consumerTag = null
+        ?string $consumerTag = null
     ): void {
         if (null !== $callback) {
             $innerCallback = function (AMQPMessage $envelope) use ($callback): bool {

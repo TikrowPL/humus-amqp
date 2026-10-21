@@ -87,7 +87,7 @@ final class ExchangeFactory implements ProvidesDefaultOptions, RequiresConfigId,
         return (new static($name, $arguments[1], $arguments[2]))->__invoke($arguments[0]);
     }
 
-    public function __construct(string $exchangeName, Channel $channel = null, bool $autoSetupFabric = false)
+    public function __construct(string $exchangeName, ?Channel $channel = null, bool $autoSetupFabric = false)
     {
         $this->exchangeName = $exchangeName;
         $this->channel = $channel;

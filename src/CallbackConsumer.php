@@ -43,8 +43,8 @@ final class CallbackConsumer extends AbstractConsumer
         LoggerInterface $logger,
         float $idleTimeout,
         callable $deliveryCallback,
-        callable $flushCallback = null,
-        callable $errorCallback = null,
+        ?callable $flushCallback = null,
+        ?callable $errorCallback = null,
         string $consumerTag = ''
     ) {
         if ('' === $consumerTag) {

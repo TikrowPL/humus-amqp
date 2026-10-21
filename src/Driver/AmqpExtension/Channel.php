@@ -110,7 +110,7 @@ final class Channel implements ChannelInterface
         $this->channel->confirmSelect();
     }
 
-    public function setConfirmCallback(callable $ackCallback = null, callable $nackCallback = null): void
+    public function setConfirmCallback(?callable $ackCallback = null, ?callable $nackCallback = null): void
     {
         $this->channel->setConfirmCallback($ackCallback, $nackCallback);
     }
@@ -126,7 +126,7 @@ final class Channel implements ChannelInterface
         }
     }
 
-    public function setReturnCallback(callable $returnCallback = null): void
+    public function setReturnCallback(?callable $returnCallback = null): void
     {
         $innerCallback = null;
 

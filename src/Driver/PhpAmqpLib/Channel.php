@@ -94,7 +94,7 @@ final class Channel implements ChannelInterface
     public function qos(int $size, int $count): void
     {
         $this->channel->basic_qos($size, $count, false);
-        $this->prefechSize = $size;
+        $this->prefetchSize = $size;
         $this->prefetchCount = $count;
     }
 
@@ -128,7 +128,7 @@ final class Channel implements ChannelInterface
         $this->channel->confirm_select();
     }
 
-    public function setConfirmCallback(callable $ackCallback = null, callable $nackCallback = null): void
+    public function setConfirmCallback(?callable $ackCallback = null, ?callable $nackCallback = null): void
     {
         if (\is_callable($ackCallback)) {
             $innerAckCallback = function (AMQPMessage $message) use ($ackCallback): bool {
@@ -162,7 +162,7 @@ final class Channel implements ChannelInterface
         }
     }
 
-    public function setReturnCallback(callable $returnCallback = null): void
+    public function setReturnCallback(?callable $returnCallback = null): void
     {
         if (! $returnCallback) {
             return;

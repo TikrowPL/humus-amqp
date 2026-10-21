@@ -92,7 +92,7 @@ final class QueueFactory implements ProvidesDefaultOptions, RequiresConfigId, Re
         return (new static($name, $arguments[1], $arguments[2]))->__invoke($arguments[0]);
     }
 
-    public function __construct(string $queueName, Channel $channel = null, bool $autoSetupFabric = false)
+    public function __construct(string $queueName, ?Channel $channel = null, bool $autoSetupFabric = false)
     {
         $this->queueName = $queueName;
         $this->channel = $channel;
