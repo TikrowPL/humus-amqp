@@ -66,17 +66,17 @@ final class Envelope implements EnvelopeInterface
 
     public function getContentType(): string
     {
-        return $this->envelope->getContentType();
+        return $this->envelope->getContentType() ?? '';
     }
 
     public function getContentEncoding(): string
     {
-        return $this->envelope->getContentEncoding();
+        return $this->envelope->getContentEncoding() ?? '';
     }
 
     public function getType(): string
     {
-        return $this->envelope->getType();
+        return $this->envelope->getType() ?? '';
     }
 
     public function getTimestamp(): int
@@ -96,27 +96,27 @@ final class Envelope implements EnvelopeInterface
 
     public function getUserId(): string
     {
-        return $this->envelope->getUserId();
+        return $this->envelope->getUserId() ?? '';
     }
 
     public function getAppId(): string
     {
-        return $this->envelope->getAppId();
+        return $this->envelope->getAppId() ?? '';
     }
 
     public function getMessageId(): string
     {
-        return $this->envelope->getMessageId();
+        return $this->envelope->getMessageId() ?? '';
     }
 
     public function getReplyTo(): string
     {
-        return $this->envelope->getReplyTo();
+        return $this->envelope->getReplyTo() ?? '';
     }
 
     public function getCorrelationId(): string
     {
-        return $this->envelope->getCorrelationId();
+        return $this->envelope->getCorrelationId() ?? '';
     }
 
     public function getHeaders(): array
